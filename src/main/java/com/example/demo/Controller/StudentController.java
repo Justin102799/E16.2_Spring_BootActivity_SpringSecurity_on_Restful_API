@@ -31,9 +31,10 @@ public class StudentController {
     public @ResponseBody String addStudents (@RequestParam String studentFname,
                                              @RequestParam String studentLname,
                                              @RequestParam String studentEmail,
-                                             @RequestParam String studentCourse){
+                                             @RequestParam String studentCourse,
+                                             @RequestParam String gpa){
 
-        return studentService.createStudent(studentFname, studentLname, studentEmail, studentCourse);
+        return studentService.createStudent(studentFname, studentLname, studentEmail, studentCourse, gpa);
     }
 
     @GetMapping("/students")
@@ -60,8 +61,10 @@ public class StudentController {
         studentEntity.setStudentLname(studentDetails.getStudentLname());
         studentEntity.setStudentEmail(studentDetails.getStudentEmail());
         studentEntity.setStudentCourse(studentDetails.getStudentCourse());
+        studentEntity.setGpa(studentDetails.getGpa());
         return new ResponseEntity<>(studentRepository.save(studentEntity), HttpStatus.OK);
     }
+
 
 }
 

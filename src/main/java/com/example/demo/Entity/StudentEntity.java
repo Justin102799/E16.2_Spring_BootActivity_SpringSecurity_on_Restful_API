@@ -3,7 +3,7 @@ package com.example.demo.Entity;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "dbstudent")
+@Table(name = "mytable")
 public class StudentEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -12,6 +12,7 @@ public class StudentEntity {
     private String studentLname;
     private String studentEmail;
     private String studentCourse;
+    private String gpa;
 
     public int getId() {
         return id;
@@ -53,4 +54,11 @@ public class StudentEntity {
         this.studentCourse = studentCourse;
     }
 
+    public String getGpa() {
+        return gpa;
+    }
+
+    public void setGpa(String gpa) {
+        this.gpa = gpa;
+    }
 }

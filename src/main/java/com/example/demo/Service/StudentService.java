@@ -21,12 +21,13 @@ public class StudentService {
 
 
 
-    public String createStudent(String fname, String lname, String email, String course){
+    public String createStudent(String fname, String lname, String email, String course, String gpa){
         StudentEntity studentEntity = new StudentEntity();
         studentEntity.setStudentFname(fname);
         studentEntity.setStudentLname(lname);
         studentEntity.setStudentEmail(email);
         studentEntity.setStudentCourse(course);
+        studentEntity.setGpa(gpa);
         studentRepository.save(studentEntity);
 
         return "Details Saved!";
