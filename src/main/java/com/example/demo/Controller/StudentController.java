@@ -19,58 +19,6 @@ import java.util.Map;
 public class StudentController {
 
 
-//@RestController
-//@Validated
-//public class StudentController {
-//
-//    @Autowired
-//    private StudentRepository studentRepository;
-//
-//    //find
-//    @GetMapping("/students")
-//    List<StudentEntity> findAll(){
-//        return studentRepository.findAll();
-//    }
-//    //save
-//    @PostMapping("/students")
-//        @ResponseStatus(HttpStatus.CREATED)
-//    StudentEntity newStudent(@Validated @RequestBody StudentEntity newStudent){
-//        return studentRepository.save(newStudent);
-//    }
-//    //find
-//    @GetMapping("/students/{id}")
-//    StudentEntity findOne(@PathVariable Long id){
-//        return studentRepository.findById(id).orElseThrow(() -> new StudentNotFoundException(id));
-//    }
-//    //save or update
-//    @PutMapping("/students/{id}")
-//    StudentEntity saveOrUpdate(@RequestBody StudentEntity newStudent, @PathVariable Long id){
-//
-//        return studentRepository.findById(id)
-//                .map(x->{
-//                    x.setStudentFname(newStudent.getStudentFname());
-//                    x.setStudentLname(newStudent.getStudentLname());
-//                    x.setStudentEmail(newStudent.getStudentEmail());
-//                    x.setStudentCourse(newStudent.getStudentCourse());
-//                    return studentRepository.save(x);
-//                })
-//                .orElseGet(() ->{
-//                    newStudent.setId(id);
-//                    return studentRepository.save(newStudent);
-//                });
-//    }
-//    //update  only
-//    @PatchMapping("/students/{id}")
-//    StudentEntity patch(@RequestBody Map<String, String> update, @PathVariable Long id){
-//
-//        return studentRepository.findById(id)
-//                .map(x ->{
-//
-//                })
-//    }
-
-//    }
-
     @Autowired
     private StudentService studentService;
 
